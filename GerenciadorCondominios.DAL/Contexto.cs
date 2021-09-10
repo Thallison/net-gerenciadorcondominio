@@ -2,35 +2,24 @@
 using GerenciadorCondominios.DAL.Mapeamentos;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GerenciadorCondominios.DAL
 {
     public class Contexto : IdentityDbContext<Usuario, Funcao, string>
     {
         public DbSet<Aluguel> Alugueis { get; set; }
-
         public DbSet<Apartamento> Apartamentos { get; set; }
-
         public DbSet<Evento> Eventos { get; set; }
-
         public DbSet<Funcao> Funcoes { get; set; }
-
         public DbSet<HistoricoRecursos> HistoricoRecursos { get; set; }
-
+        public DbSet<Mes> Meses { get; set; }
         public DbSet<Pagamento> Pagamentos { get; set; }
-
         public DbSet<Servico> Servicos { get; set; }
-
         public DbSet<ServicoPredio> ServicoPredios { get; set; }
-
         public DbSet<Usuario> Usuarios { get; set; }
-
         public DbSet<Veiculo> Veiculos { get; set; }
 
-        public Contexto(DbContextOptions<Contexto> opcoes) : base(opcoes) 
+        public Contexto(DbContextOptions<Contexto> opcoes) : base(opcoes)
         {
 
         }
@@ -46,7 +35,7 @@ namespace GerenciadorCondominios.DAL
             builder.ApplyConfiguration(new HistoricoRecursosMap());
             builder.ApplyConfiguration(new MesMap());
             builder.ApplyConfiguration(new ServicoMap());
-            builder.ApplyConfiguration(new ServicoPredioMap());
+            builder.ApplyConfiguration(new ServicoPrediosMap());
             builder.ApplyConfiguration(new UsuarioMap());
             builder.ApplyConfiguration(new VeiculoMap());
         }

@@ -1,9 +1,6 @@
 ﻿using GerenciadorCondominios.BLL.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GerenciadorCondominios.DAL.Mapeamentos
 {
@@ -11,11 +8,11 @@ namespace GerenciadorCondominios.DAL.Mapeamentos
     {
         public void Configure(EntityTypeBuilder<Mes> builder)
         {
-            builder.HasKey(m => m.MesID);
-            builder.Property(m => m.MesID).ValueGeneratedNever();
+            builder.HasKey(m => m.MesId);
+            builder.Property(m => m.MesId).ValueGeneratedNever();
 
             builder.Property(m => m.Nome).IsRequired().HasMaxLength(30);
-            builder.Property(m => m.Nome).IsUnicode();
+            builder.HasIndex(m => m.Nome).IsUnique();
 
             builder.HasMany(m => m.Alugueis).WithOne(m => m.Mes);
             builder.HasMany(m => m.HistoricoRecursos).WithOne(m => m.Mes);
@@ -23,65 +20,75 @@ namespace GerenciadorCondominios.DAL.Mapeamentos
             builder.HasData(
                 new Mes
                 {
-                    MesID = 1,
+                    MesId = 1,
                     Nome = "Janeiro"
                 },
+
                 new Mes
                 {
-                    MesID = 2,
+                    MesId = 2,
                     Nome = "Fevereiro"
                 },
+
                 new Mes
                 {
-                    MesID = 3,
+                    MesId = 3,
                     Nome = "Março"
                 },
+
                 new Mes
                 {
-                    MesID = 4,
+                    MesId = 4,
                     Nome = "Abril"
                 },
+
                 new Mes
                 {
-                    MesID = 5,
+                    MesId = 5,
                     Nome = "Maio"
                 },
+
                 new Mes
                 {
-                    MesID = 6,
+                    MesId = 6,
                     Nome = "Junho"
                 },
+
                 new Mes
                 {
-                    MesID = 7,
+                    MesId = 7,
                     Nome = "Julho"
                 },
+
                 new Mes
                 {
-                    MesID = 8,
+                    MesId = 8,
                     Nome = "Agosto"
                 },
+
                 new Mes
                 {
-                    MesID = 9,
+                    MesId = 9,
                     Nome = "Setembro"
                 },
+
                 new Mes
                 {
-                    MesID = 10,
+                    MesId = 10,
                     Nome = "Outubro"
                 },
+
                 new Mes
                 {
-                    MesID = 11,
+                    MesId = 11,
                     Nome = "Novembro"
                 },
+
                 new Mes
                 {
-                    MesID = 12,
+                    MesId = 12,
                     Nome = "Dezembro"
-                }
-            );
+                });
 
             builder.ToTable("Meses");
         }

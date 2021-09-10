@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace GerenciadorCondominios.BLL.Models
 {
@@ -17,7 +15,6 @@ namespace GerenciadorCondominios.BLL.Models
         public DateTime Data { get; set; }
 
         public string UsuarioId { get; set; }
-
         public virtual Usuario Usuario { get; set; }
     }
 }

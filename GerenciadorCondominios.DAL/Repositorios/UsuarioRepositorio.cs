@@ -5,18 +5,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace GerenciadorCondominios.DAL.Repositorios
 {
-
     public class UsuarioRepositorio : RepositorioGenerico<Usuario>, IUsuarioRepositorio
     {
         private readonly Contexto _contexto;
         private readonly UserManager<Usuario> _gerenciadorUsuarios;
         private readonly SignInManager<Usuario> _gerenciadorLogin;
-
         public UsuarioRepositorio(Contexto contexto, UserManager<Usuario> gerenciadorUsuarios, SignInManager<Usuario> gerenciadorLogin) : base(contexto)
         {
             _contexto = contexto;

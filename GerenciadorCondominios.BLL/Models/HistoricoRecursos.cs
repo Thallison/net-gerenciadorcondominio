@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GerenciadorCondominios.BLL.Models
+﻿namespace GerenciadorCondominios.BLL.Models
 {
     public class HistoricoRecursos
     {
@@ -15,13 +11,12 @@ namespace GerenciadorCondominios.BLL.Models
         public int Dia { get; set; }
 
         public int MesId { get; set; }
-
         public virtual Mes Mes { get; set; }
 
         public int Ano { get; set; }
     }
 
-    public enum Tipos 
+    public enum Tipos
     {
         Entrada, Saida
     }

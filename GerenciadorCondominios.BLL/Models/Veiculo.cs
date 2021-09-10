@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace GerenciadorCondominios.BLL.Models
 {
@@ -25,8 +22,6 @@ namespace GerenciadorCondominios.BLL.Models
         public string Placa { get; set; }
 
         public string UsuarioId { get; set; }
-        
         public Usuario Usuario { get; set; }
-
     }
 }

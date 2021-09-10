@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace GerenciadorCondominios.Extensions
 {
@@ -11,7 +7,7 @@ namespace GerenciadorCondominios.Extensions
     {
         public static void ConfigurarNomeUsuario(this IServiceCollection services)
         {
-            services.Configure<IdentityOptions>(opcoes => 
+            services.Configure<IdentityOptions>(opcoes =>
             {
                 opcoes.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
                 opcoes.User.RequireUniqueEmail = true;
